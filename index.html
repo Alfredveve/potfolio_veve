@@ -1,99 +1,388 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Potfolio BeaDev</title>
 
-     <!--- Montserrat Font ---> 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!--- Montserrat Font --->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
 
-    <!--- Material Icons ---> 
+    <!--- Material Icons --->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-   
-    <!--- Custom CSS ---> 
 
+
+    <!--- Leaflet css --->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+
+    <!--- Custom CSS --->
     <link rel="stylesheet" href="css/style.css">
 
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  </head>
-  <body>
-<div class="container-fluid px-0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
 
-   <!--- Navbar ---> 
+<body>
+    <div class="container-fluid px-0">
+
+        <!--- Navbar --->
 
 
-      <!--- End Navbar ---> 
-<nav class="navbar navbar-expand-lg navbar-ligth shadow">
- <div class="container-fluid">
-    <a class="navbar-brand" href="/">
-        <span class="material-icons-outlined me-1">important_devices</span>
-            Bea Developer
-    </a>
-    <button
-    type="button"
-    class="navbar-toggler"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-    >
-    <span class="navbar-toggler-icon"></span>
-</button>
-    <div class="container px-3">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link me-lg-3" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link me-lg-3" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link me-lg-3" href="#projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link me-lg-3" href="#testimonials">Testimonials</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link me-lg-3" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
+        <!--- End Navbar --->
+        <nav class="navbar navbar-expand-lg navbar-ligth shadow">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <span class="material-icons-outlined me-1">important_devices</span>
+                    Bea Developer
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="container px-3">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link me-lg-3" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-lg-3" href="#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-lg-3" href="#projects">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-lg-3" href="#testimonials">Testimonials</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-lg-3" href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!--- Hero --->
+        <header class="bg-light py-5">
+            <div class="container px-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 col-xl-7 col-xxl-6">
+                        <div class="my-5">
+                            <h2 class="text-center fw-bold mb-2">Hi! I am Bea,</h2>
+                            <h2 class="text-primary text-center fw-bold mb-2">a full-stack web Developer</h2>
+                            <p class="lead text-muted mb-4">
+                                I specialize in building web applications using React and Django. Scroll down to see what I have been working on.
+                            </p>
+                            <div class="d-grid gap-3 d-sm-flex justify-content-center">
+                                <a class="btn btn-primary btn-large text-uppercase" href="#about">
+                                    Learn More 
+                                    <span class="material-icons-outlined ms-2">help_outline</span>
+                                </a>
+                                <a class="btn btn-outline-primary btn-large text-uppercase" href="#projects">
+                                    View My Work 
+                                    <span class="material-icons-outlined ms-2">manage_search</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-xxl-6 justify-content-center">
+                        <img class="img-fluid ronded-3 my-5" src="images/hero.jpg" alt="Hero Image">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--- End hero --->
+
+        <hr>
+
+        <main>
+
+            <!--- About --->
+            <section id="about" class="text-center py-5">
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <h2 class="fw-bold">About</h2>
+                        <p class="lead text-muted mb-5">
+                            I am a freelance web developer who builds elegant, fast, and scalable web applications.
+                        </p>
+                    </div>
+                </div>
+                <div class="container mb-5">
+                    <div class="row">
+                        <div class="col-lg-4 mx-auto mb-5">
+                            <div class="d-flex mb-5 about">
+                                <span class="material-icons-outlined m-auto text-primary">palette</span>
+                            </div>
+                            <h5>Design</h5>
+                            <p class="text-muted mb-0">
+                                I create beautiful, modern designs optimized for multiple color modes (light and dark themes).
+                            </p>
+                        </div>
+                       
+                        <div class="col-lg-4 mx-auto mb-5">
+                            <div class="d-flex mb-5 about">
+                                <span class="material-icons-outlined m-auto text-primary">code</span>
+                            </div>
+                            <h5>Development</h5>
+                            <p class="text-muted mb-0">
+                                I develop responsive, scalable, and fast applications using the best standards and coding practices.
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4 mx-auto mb-5">
+                            <div class="d-flex mb-5 about">
+                                <span class="material-icons-outlined m-auto text-primary">settings</span>
+                            </div>
+                            <h5>Launch & Maintenance</h5>
+                            <p class="text-muted mb-0">
+                            Once the application is read, I will help you lauch it and teach you how to update and maintain it.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!--- End About --->
+
+            <hr>
+
+
+            <!--- Projects --->
+            <section id="projects" class="text-center py-5">
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <h2 class="fw-bold">Projects</h2>
+                        <p class="lead text-muted mb-5">
+                            View some of my latest projects 
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="container mb-5">
+                    <div class="row">
+                        <div class="col-lg-4 mx-auto mb-5">
+                            <div class="card h-100 shadow-lg border-0 bg-light">
+                                <img class="card-img-top" src="images/project1.jpg" alt="project 1">
+                                <div class="card-body p-4">
+                                    <h5 class="card-title mb-3">Cryptocurrency Dashboard</h5>
+                                    <div class="mb-2">
+                                        <div class="badge bg-primary rounded-pill">Django</div>
+                                        <div class="badge bg-primary rounded-pill">Reactjs</div>
+                                        <div class="badge bg-primary rounded-pill">Material UI</div>
+                                    </div>
+                                    <p class="card-text">
+                                        A cryptocurrency dashboard app built using Reactjs 18, Material UI 6 and Chart.js 4.
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-transparent mb-3">
+                                    <a class="btn btn-outline-primary btn-sm text-uppercase"
+                                    href="https://github.com/Alfredveve/dimRevise_00001"
+                                    target="_blank">
+                                    <span class="material-icons-outlined me-1">code</span>
+                                    Source code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-4 mx-auto mb-5">
+                            <div class="card h-100 shadow-lg border-0 bg-light">
+                                <img class="card-img-top" src="images/project2.jpg" alt="project 2">
+                                <div class="card-body p-4">
+                                    <h5 class="card-title mb-3">Portfolio web site</h5>
+                                    <div class="mb-2">
+                                        <div class="badge bg-primary rounded-pill">Django</div>
+                                        <div class="badge bg-primary rounded-pill">Reactjs</div>
+                                        <div class="badge bg-primary rounded-pill">Material UI</div>
+                                    </div>
+                                    <p class="card-text">
+                                        A portfolio website built using Django 5.2, Next.js 14 and Material UI 6 that uses a PostgreSQL database to store data.
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-transparent mb-3">
+                                    <a class="btn btn-outline-primary btn-sm text-uppercase"
+                                    href="https://github.com/Alfredveve/puddle"
+                                    target="_blank">
+                                    <span class="material-icons-outlined me-1">code</span>
+                                    Source code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 mx-auto mb-5">
+                            <div class="card h-100 shadow-lg border-0 bg-light">
+                                <img class="card-img-top" src="images/project3.jpg" alt="project 3">
+                                <div class="card-body p-4">
+                                    <h5 class="card-title mb-3">Image classification</h5>
+                                    <div class="mb-2">
+                                        <div class="badge bg-primary rounded-pill">Django</div>
+                                        <div class="badge bg-primary rounded-pill">Reactjs</div>
+                                        <div class="badge bg-primary rounded-pill">Material UI</div>
+                                    </div>
+                                    <p class="card-text">
+                                        An image classification app built using TensorFlow 2, Django 5.4, Reactjs 19 ans Marial UI 10.
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-transparent mb-3">
+                                    <a class="btn btn-outline-primary btn-sm text-uppercase"
+                                    href=""
+                                    target="_blank">
+                                    <span class="material-icons-outlined me-1">code</span>
+                                    Source code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+            <!--- End Projects --->
+
+<hr>
+            <!--- Testimonials --->
+            <section id="testimonials" class="text-center py-5">
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <h2 class="fw-bold">Testimonials</h2>
+                        <p class="lead text-muted mb-5">
+                            Check what clients have said about my work 
+                        </p>
+                    </div>
+                </div>
+
+
+                    <div class="container mb-5">
+                        <div class="row">
+                            <div class="col-lg-4 mx-auto mb-5">
+                                <div class="text-center fs-4 fst-italic mb-4 px-2">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores deleniti at ratione!
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center testimonial">
+                                    <img class="rounded-circle me-3" src="images/user1.jpg" alt="user 1">
+                                    <div class="fw-bold">
+                                        Alfred BESHEED
+                                        <span class="text-primary mx-1">/</span>
+                                        CEO Company 1
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 mx-auto mb-5">
+                                <div class="text-center fs-4 fst-italic mb-4 px-2">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores deleniti at ratione!
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center testimonial">
+                                    <img class="rounded-circle me-3" src="images/user2.jpg" alt="user 2">
+                                    <div class="fw-bold">
+                                        Micheal Kolako Béavogui
+                                        <span class="text-primary mx-1">/</span>
+                                        CEO Company 2
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-4 mx-auto mb-5">
+                                <div class="text-center fs-4 fst-italic mb-4 px-2">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores deleniti at ratione!
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center testimonial">
+                                    <img class="rounded-circle me-3" src="images/user3.jpg" alt="user 3">
+                                    <div class="fw-bold">
+                                        Jeannette Gaou Béa
+                                        <span class="text-primary mx-1">/</span>
+                                        CEO Company 3
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+            </section>
+            <!--- End Testimonials --->
+
+        </main>
     </div>
- </div>   
-</nav>
+    <hr>
 
-         <!--- Hero ---> 
+     <!--- Contact --->
+     <section id="contact" class="text-center py-5">
 
-          <!--- End hero ---> 
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <h2 class="fw-bold">Contact</h2>
+                <p class="lead text-muted mb-5">
+                    Do you need a full-stack web developer? I would love to hear from you 
+                </p>
+            </div>
+        </div>
 
-<main>
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col-xl-5 col-xxl-6 mb-5">
+                    <div id="map"></div> 
+                </div>    
+                <div class="col-lg-8 col-xl-7 col-xxl-6 mb-5">
 
-     <!--- About ---> 
-     <!--- End About ---> 
+                    <div class="mb-5">
+                        <h6 class="text-uppercase mb-2">Phone</h6>
+                        <p class="lead mb-8"> +224 620 83 35 02 </p>
+                    </div>
+
+                    <div class="mb-5">
+                        <h6 class="text-uppercase mb-2">Email</h6>
+                        <p class="lead mb-8"> codesheets01@gmail.com</p>
+                    </div>
+
+                </div>  
+            </div>
+        </div>
+
+     </section>
+    <!--- EndContact --->
+
+<hr>
+    
+    <!--- Footer --->
+    <footer class="text-center py-4">
+        <div>
+            Copyright &copy; 2024 Bea's Programming Academy
+        </div>
+
+    </footer>
+    <!--- End Footer --->
 
 
-     <!--- Projects ---> 
-     <!--- End Projects ---> 
 
+  
+    <!--- Leaflet JS ---> 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-     <!--- Testimonials ---> 
-     <!--- End Testimonials ---> 
+    <!--- Bootstrap js ---> 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+          <!--- Custom JS --->
+    <script src="js/scripts.js"></script>
 
-</main>
-</div>
+</body>
 
-<!--- Footer ---> 
-<!--- End Footer ---> 
-
-     <!--- Custom JS ---> 
-     <script src="js/scripts.js"></script>
-
-     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-    </body>
 </html>
